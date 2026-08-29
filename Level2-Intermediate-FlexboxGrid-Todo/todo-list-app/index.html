@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Focus — To-Do List</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@600&family=Work+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <main class="todo-app">
+    <header>
+      <p class="eyebrow">Task Manager</p>
+      <h1>Focus</h1>
+    </header>
+
+    <form id="todo-form" class="add-row">
+      <input type="text" id="todo-input" placeholder="What needs to get done?" autocomplete="off" required>
+      <button type="submit">Add</button>
+    </form>
+
+    <div class="filter-row">
+      <button class="filter-btn active" data-filter="all">All</button>
+      <button class="filter-btn" data-filter="active">Active</button>
+      <button class="filter-btn" data-filter="completed">Completed</button>
+      <span class="counter" id="counter">0 tasks</span>
+    </div>
+
+    <ul id="todo-list" class="todo-list"></ul>
+
+    <p id="empty-state" class="empty-state">Nothing here yet — add your first task above.</p>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

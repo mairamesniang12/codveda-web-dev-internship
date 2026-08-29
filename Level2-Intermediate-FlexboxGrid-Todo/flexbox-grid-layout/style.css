@@ -1,0 +1,203 @@
+:root {
+  --indigo: #1b2a4a;
+  --gold: #c9972e;
+  --teal: #2c7a76;
+  --paper: #f7f4ee;
+  --ink: #1c1c1c;
+  --ink-soft: #55575f;
+  --font-display: "Fraunces", serif;
+  --font-body: "Work Sans", sans-serif;
+  --font-mono: "IBM Plex Mono", monospace;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: var(--font-body); background: var(--paper); color: var(--ink); }
+
+/* ===== Header — Flexbox ===== */
+.site-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  padding: 1.2rem 2rem;
+  background: var(--indigo);
+  color: var(--paper);
+}
+
+.site-header .logo {
+  font-family: var(--font-display);
+  font-size: 1.3rem;
+  font-weight: 600;
+}
+
+.header-nav {
+  display: flex;
+  gap: 1.6rem;
+  flex-wrap: wrap;
+}
+
+.header-nav a {
+  color: var(--paper);
+  text-decoration: none;
+  font-size: 0.9rem;
+  opacity: 0.85;
+}
+
+.header-nav a:hover { opacity: 1; color: var(--gold); }
+
+/* ===== Page shell — Flexbox (content + sidebar) ===== */
+.page-shell {
+  display: flex;
+  gap: 2rem;
+  max-width: 1080px;
+  margin: 2.5rem auto;
+  padding: 0 1.5rem;
+  align-items: flex-start;
+}
+
+/* ===== Post gallery — CSS Grid ===== */
+.post-grid {
+  flex: 3;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.4rem;
+}
+
+.post-card {
+  background: #fff;
+  border: 1px solid #e7e2d6;
+  border-radius: 8px;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.post-card--feature {
+  grid-column: span 2;
+  background: var(--indigo);
+  color: var(--paper);
+  border: none;
+}
+
+.post-card--feature h2 {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  line-height: 1.25;
+}
+
+.post-card--feature p { color: #d8ddec; }
+
+.post-tag {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--teal);
+}
+
+.post-card--feature .post-tag { color: var(--gold); }
+
+.post-card h3 {
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  color: var(--indigo);
+}
+
+.post-card p { color: var(--ink-soft); font-size: 0.9rem; flex-grow: 1; }
+
+.post-meta {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  color: var(--ink-soft);
+  opacity: 0.7;
+}
+
+.post-card--feature .post-meta { color: #b9c0d4; }
+
+/* ===== Sidebar — Flexbox ===== */
+.sidebar {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 1.4rem;
+  min-width: 220px;
+}
+
+.sidebar-block {
+  background: #fff;
+  border: 1px solid #e7e2d6;
+  border-radius: 8px;
+  padding: 1.3rem;
+}
+
+.sidebar-block h4 {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--teal);
+  margin-bottom: 0.8rem;
+}
+
+.topic-list { list-style: none; display: flex; flex-direction: column; gap: 0.5rem; }
+.topic-list a {
+  display: flex;
+  justify-content: space-between;
+  color: var(--ink);
+  text-decoration: none;
+  font-size: 0.9rem;
+}
+.topic-list a span { color: var(--ink-soft); }
+.topic-list a:hover { color: var(--teal); }
+
+.sidebar-block p { font-size: 0.86rem; color: var(--ink-soft); margin-bottom: 0.8rem; }
+
+.subscribe-row { display: flex; gap: 0.5rem; }
+.subscribe-row input {
+  flex: 1;
+  padding: 0.5rem 0.7rem;
+  border: 1px solid #d8d2c2;
+  border-radius: 4px;
+  font-size: 0.85rem;
+}
+.subscribe-row button {
+  padding: 0.5rem 0.9rem;
+  background: var(--gold);
+  border: none;
+  border-radius: 4px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+/* ===== Footer — Flexbox ===== */
+.site-footer {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  padding: 1.5rem 2rem;
+  font-size: 0.8rem;
+  color: var(--ink-soft);
+  border-top: 1px solid #e7e2d6;
+  max-width: 1080px;
+  margin: 0 auto;
+}
+
+/* ===== Responsive breakpoints ===== */
+
+/* Tablet: sidebar drops below, post grid stays 2-col */
+@media (max-width: 900px) {
+  .page-shell { flex-direction: column; }
+  .sidebar { flex-direction: row; flex-wrap: wrap; width: 100%; }
+  .sidebar-block { flex: 1; min-width: 220px; }
+}
+
+/* Mobile: single column everywhere */
+@media (max-width: 600px) {
+  .post-grid { grid-template-columns: 1fr; }
+  .post-card--feature { grid-column: span 1; }
+  .site-header { flex-direction: column; align-items: flex-start; }
+  .sidebar { flex-direction: column; }
+}

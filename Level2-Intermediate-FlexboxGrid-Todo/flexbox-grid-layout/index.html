@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Field Notes — Responsive Blog Layout (Flexbox + Grid)</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600&family=Work+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Header built with Flexbox -->
+  <header class="site-header">
+    <span class="logo">Field Notes</span>
+    <nav class="header-nav">
+      <a href="#">Home</a>
+      <a href="#">Machine Learning</a>
+      <a href="#">Data Science</a>
+      <a href="#">About</a>
+    </nav>
+  </header>
+
+  <div class="page-shell">
+
+    <!-- Main content: CSS Grid for blog post gallery -->
+    <main class="post-grid">
+
+      <article class="post-card post-card--feature">
+        <span class="post-tag">Featured</span>
+        <h2>Fine-Tuning Small Language Models for Low-Resource Languages</h2>
+        <p>A walkthrough of applying LoRA to adapt a 0.6B parameter model to Wolof, including the hyperparameter sweep that shaped the final run.</p>
+        <span class="post-meta">12 min read · NLP</span>
+      </article>
+
+      <article class="post-card">
+        <span class="post-tag">Computer Vision</span>
+        <h3>Real-Time Object Tracking with YOLO + ByteTrack</h3>
+        <p>Notes from deploying a traffic monitoring pipeline, and the Git LFS quirks that came with it.</p>
+        <span class="post-meta">6 min read</span>
+      </article>
+
+      <article class="post-card">
+        <span class="post-tag">Data Science</span>
+        <h3>Feature Engineering for Clinical Prediction Models</h3>
+        <p>What changed in model performance once preprocessing was done right, on a heart-failure dataset.</p>
+        <span class="post-meta">5 min read</span>
+      </article>
+
+      <article class="post-card">
+        <span class="post-tag">NLP</span>
+        <h3>Biomedical NER with Bi-LSTM: What Worked</h3>
+        <p>Lessons from training on clinical transcriptions, and where the model still struggles.</p>
+        <span class="post-meta">7 min read</span>
+      </article>
+
+      <article class="post-card">
+        <span class="post-tag">Tooling</span>
+        <h3>Git Workflows That Actually Survive Group Projects</h3>
+        <p>Merge conflicts, rejected pushes, and the handful of commands that save the most time.</p>
+        <span class="post-meta">4 min read</span>
+      </article>
+
+      <article class="post-card">
+        <span class="post-tag">Community</span>
+        <h3>Building The Mairame Foundation, One Mentor at a Time</h3>
+        <p>Why local mentorship mattered more than one-time aid for the students we support.</p>
+        <span class="post-meta">8 min read</span>
+      </article>
+
+    </main>
+
+    <!-- Sidebar built with Flexbox -->
+    <aside class="sidebar">
+      <div class="sidebar-block">
+        <h4>Topics</h4>
+        <ul class="topic-list">
+          <li><a href="#">NLP <span>(3)</span></a></li>
+          <li><a href="#">Computer Vision <span>(2)</span></a></li>
+          <li><a href="#">Data Science <span>(4)</span></a></li>
+          <li><a href="#">Tooling <span>(1)</span></a></li>
+        </ul>
+      </div>
+      <div class="sidebar-block">
+        <h4>Newsletter</h4>
+        <p>New notes on ML & data science, roughly monthly.</p>
+        <div class="subscribe-row">
+          <input type="email" placeholder="you@example.com">
+          <button>Join</button>
+        </div>
+      </div>
+    </aside>
+
+  </div>
+
+  <footer class="site-footer">
+    <span>© 2026 Field Notes</span>
+    <span class="footer-meta">Built with CSS Flexbox (header, sidebar) & CSS Grid (post gallery)</span>
+  </footer>
+
+</body>
+</html>

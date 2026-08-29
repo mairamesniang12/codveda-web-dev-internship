@@ -1,0 +1,294 @@
+/* ============================================
+   Amy Sow — Personal Portfolio
+   Palette: deep indigo, gold, teal, warm paper
+   ============================================ */
+
+:root {
+  --indigo: #1b2a4a;
+  --indigo-deep: #0f1830;
+  --gold: #c9972e;
+  --gold-light: #eccb7c;
+  --teal: #2c7a76;
+  --coral: #e0704a;
+  --paper: #f7f4ee;
+  --ink: #1c1c1c;
+  --ink-soft: #55575f;
+
+  --font-display: "Fraunces", serif;
+  --font-body: "Work Sans", sans-serif;
+  --font-mono: "IBM Plex Mono", monospace;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--font-body);
+  line-height: 1.65;
+}
+
+a { color: inherit; }
+
+/* ---------- Nav ---------- */
+nav {
+  position: sticky;
+  top: 0;
+  background: rgba(247,244,238,0.92);
+  backdrop-filter: blur(6px);
+  border-bottom: 1px solid #e4dfd0;
+  z-index: 20;
+}
+
+.nav-inner {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 1rem 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-inner .logo {
+  font-family: var(--font-mono);
+  font-weight: 500;
+  font-size: 0.95rem;
+  letter-spacing: 0.02em;
+}
+
+.nav-inner ul {
+  display: flex;
+  gap: 1.8rem;
+  list-style: none;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.nav-inner a:hover { color: var(--teal); }
+
+/* ---------- Hero / Intro ---------- */
+.intro {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 5rem 1.5rem 4rem;
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  gap: 3rem;
+  align-items: center;
+}
+
+.intro .eyebrow {
+  font-family: var(--font-mono);
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  letter-spacing: 0.16em;
+  color: var(--teal);
+  margin-bottom: 0.9rem;
+}
+
+.intro h1 {
+  font-family: var(--font-display);
+  font-size: clamp(2.2rem, 5vw, 3rem);
+  color: var(--indigo);
+  line-height: 1.12;
+  margin-bottom: 1.1rem;
+}
+
+.intro p.role {
+  font-size: 1.08rem;
+  color: var(--ink-soft);
+  max-width: 480px;
+  margin-bottom: 1.6rem;
+}
+
+.tag-row { display: flex; gap: 0.6rem; flex-wrap: wrap; }
+
+.tag {
+  font-family: var(--font-mono);
+  font-size: 0.76rem;
+  padding: 0.3rem 0.7rem;
+  border: 1px solid var(--indigo);
+  border-radius: 3px;
+  color: var(--indigo);
+}
+
+.intro-card {
+  background: var(--indigo);
+  color: var(--paper);
+  border-radius: 8px;
+  padding: 2rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.intro-card::before {
+  content: "";
+  position: absolute;
+  top: -30px; right: -30px;
+  width: 100px; height: 100px;
+  background: var(--gold);
+  opacity: 0.25;
+  border-radius: 50%;
+}
+
+.intro-card .field {
+  margin-bottom: 1rem;
+  font-size: 0.86rem;
+}
+
+.intro-card .field .k {
+  font-family: var(--font-mono);
+  text-transform: uppercase;
+  font-size: 0.68rem;
+  letter-spacing: 0.12em;
+  color: var(--gold-light);
+  display: block;
+  margin-bottom: 0.2rem;
+}
+
+/* ---------- Section shell ---------- */
+section.block {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 3.5rem 1.5rem;
+}
+
+.block-head {
+  display: flex;
+  align-items: baseline;
+  gap: 0.9rem;
+  margin-bottom: 2rem;
+}
+
+.block-head .idx {
+  font-family: var(--font-mono);
+  color: var(--gold);
+  font-size: 0.85rem;
+}
+
+.block-head h2 {
+  font-family: var(--font-display);
+  font-size: 1.7rem;
+  color: var(--indigo);
+}
+
+/* ---------- Projects ---------- */
+.projects { display: grid; gap: 1.4rem; }
+
+.project-card {
+  background: #fff;
+  border: 1px solid #e7e2d6;
+  border-radius: 8px;
+  padding: 1.6rem 1.8rem;
+  display: grid;
+  grid-template-columns: 110px 1fr;
+  gap: 1.6rem;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 24px rgba(27,42,74,0.09);
+}
+
+.project-card .stamp {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  color: var(--teal);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  border-right: 1px dashed #d8d2c2;
+  padding-right: 1.2rem;
+}
+
+.project-card h3 {
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  color: var(--indigo);
+  margin-bottom: 0.4rem;
+}
+
+.project-card p { color: var(--ink-soft); font-size: 0.93rem; margin-bottom: 0.7rem; }
+
+.stack-row { display: flex; gap: 0.5rem; flex-wrap: wrap; }
+
+.chip {
+  font-size: 0.72rem;
+  padding: 0.22rem 0.6rem;
+  background: #f1ede2;
+  color: var(--indigo);
+  border-radius: 20px;
+  font-family: var(--font-mono);
+}
+
+/* ---------- Skills ---------- */
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.4rem;
+}
+
+.skill-card h4 {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--teal);
+  margin-bottom: 0.6rem;
+}
+
+.skill-card ul { list-style: none; color: var(--ink-soft); font-size: 0.92rem; }
+.skill-card li { padding: 0.2rem 0; }
+
+/* ---------- Contact ---------- */
+.contact-block {
+  background: var(--indigo);
+  border-radius: 10px;
+  color: var(--paper);
+  padding: 3rem 2rem;
+  text-align: center;
+}
+
+.contact-block h2 {
+  font-family: var(--font-display);
+  font-size: 1.8rem;
+  margin-bottom: 0.8rem;
+}
+
+.contact-block p { color: #d8ddec; margin-bottom: 1.6rem; }
+
+.contact-links { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+
+.contact-links a {
+  padding: 0.7rem 1.4rem;
+  border: 1px solid rgba(247,244,238,0.4);
+  border-radius: 4px;
+  font-size: 0.88rem;
+  font-weight: 500;
+  transition: background 0.15s;
+}
+
+.contact-links a:hover { background: rgba(247,244,238,0.1); }
+
+footer {
+  text-align: center;
+  padding: 2rem 1.5rem;
+  font-size: 0.82rem;
+  color: var(--ink-soft);
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 720px) {
+  .intro { grid-template-columns: 1fr; padding-top: 3rem; }
+  .skills-grid { grid-template-columns: 1fr; }
+  .project-card { grid-template-columns: 1fr; }
+  .project-card .stamp { border-right: none; border-bottom: 1px dashed #d8d2c2; padding-right: 0; padding-bottom: 0.6rem; }
+  .nav-inner ul { gap: 1rem; font-size: 0.82rem; }
+}
+
+/* ---------- Motion (respect reduced-motion) ---------- */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .project-card { transition: none; }
+}

@@ -1,0 +1,207 @@
+:root {
+  --indigo: #1b2a4a;
+  --gold: #c9972e;
+  --teal: #2c7a76;
+  --coral: #e0704a;
+  --paper: #f7f4ee;
+  --ink: #1c1c1c;
+  --ink-soft: #6b6d74;
+  --border: #e2ddce;
+  --font-display: "Fraunces", serif;
+  --font-body: "Work Sans", sans-serif;
+  --font-mono: "IBM Plex Mono", monospace;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: var(--font-body);
+  background: var(--paper);
+  color: var(--ink);
+}
+
+.eyebrow {
+  font-family: var(--font-mono);
+  text-transform: uppercase;
+  font-size: 0.72rem;
+  letter-spacing: 0.14em;
+  color: var(--teal);
+  margin-bottom: 0.4rem;
+}
+
+h1 {
+  font-family: var(--font-display);
+  font-size: 1.9rem;
+  color: var(--indigo);
+}
+
+/* ---------- Auth screen ---------- */
+.auth-shell {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+}
+
+.auth-card {
+  width: 100%;
+  max-width: 380px;
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 2.2rem;
+}
+
+.auth-form { margin-top: 1.4rem; display: flex; flex-direction: column; gap: 1rem; }
+
+.field label {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--indigo);
+  display: block;
+  margin-bottom: 0.3rem;
+}
+
+.field input {
+  width: 100%;
+  padding: 0.65rem 0.8rem;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  font-size: 0.92rem;
+  background: var(--paper);
+}
+
+.field input:focus { outline: 2px solid var(--teal); outline-offset: 1px; }
+
+.btn-primary {
+  padding: 0.75rem 1.2rem;
+  background: var(--indigo);
+  color: var(--paper);
+  border: none;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  font-size: 0.92rem;
+}
+
+.btn-primary:hover { background: #142140; }
+.btn-primary:disabled { opacity: 0.6; cursor: not-allowed; }
+
+.btn-secondary {
+  padding: 0.6rem 1.1rem;
+  background: none;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  font-size: 0.85rem;
+  color: var(--indigo);
+}
+
+.switch-mode { margin-top: 1.2rem; font-size: 0.85rem; color: var(--ink-soft); }
+
+.link-btn {
+  background: none;
+  border: none;
+  color: var(--teal);
+  font-weight: 600;
+  cursor: pointer;
+  font-size: 0.85rem;
+  padding: 0;
+}
+
+.error-text { color: var(--coral); font-size: 0.85rem; }
+
+/* ---------- Task board ---------- */
+.board-shell {
+  max-width: 640px;
+  margin: 0 auto;
+  padding: 3rem 1.5rem;
+}
+
+.board-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 1.8rem;
+}
+
+.task-form {
+  display: flex;
+  gap: 0.6rem;
+  margin-bottom: 1rem;
+  flex-wrap: wrap;
+}
+
+.task-form input {
+  flex: 1;
+  min-width: 160px;
+  padding: 0.7rem 0.9rem;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  font-size: 0.9rem;
+}
+
+.task-counter {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  color: var(--ink-soft);
+  margin-bottom: 1rem;
+}
+
+.task-list { list-style: none; display: flex; flex-direction: column; gap: 0.6rem; }
+
+.task-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.8rem;
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 0.9rem 1rem;
+}
+
+.task-item.completed .task-title {
+  text-decoration: line-through;
+  color: var(--ink-soft);
+}
+
+.checkbox {
+  width: 20px;
+  height: 20px;
+  border: 2px solid var(--teal);
+  border-radius: 50%;
+  background: none;
+  cursor: pointer;
+  flex-shrink: 0;
+  margin-top: 2px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.7rem;
+  padding: 0;
+}
+
+.task-item.completed .checkbox { background: var(--teal); color: #fff; }
+
+.task-text { flex: 1; }
+.task-title { font-size: 0.94rem; font-weight: 500; }
+.task-desc { font-size: 0.82rem; color: var(--ink-soft); margin-top: 0.2rem; }
+
+.delete-btn {
+  background: none;
+  border: none;
+  color: var(--coral);
+  cursor: pointer;
+  font-size: 1rem;
+  opacity: 0.7;
+}
+
+.delete-btn:hover { opacity: 1; }
+
+.empty-state { color: var(--ink-soft); font-size: 0.88rem; padding: 1.5rem 0; text-align: center; }
+
+@media (max-width: 480px) {
+  .board-header { flex-direction: column; gap: 1rem; }
+}
